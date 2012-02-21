@@ -640,7 +640,7 @@ cb_failed:
 }
 
 static struct OCTET_STRING__xer_escape_table_s {
-	char *string;
+	const char *string;
 	int size;
 } OCTET_STRING__xer_escape_table[] = {
 #define	OSXET(s)	{ s, sizeof(s) - 1 }
@@ -1041,7 +1041,7 @@ static ssize_t OCTET_STRING__convert_entrefs(void *sptr, const void *chunk_buf, 
 			/*
 			 * Ugly, limited parsing of &amp; &gt; &lt;
 			 */
-			char *sc = (char *)memchr(p, 0x3b, len > 5 ? 5 : len);
+			const char *sc = (char *)memchr(p, 0x3b, len > 5 ? 5 : len);
 			if(!sc) goto want_more;
 			if((sc - p) == 4
 				&& p[1] == 0x61	/* 'a' */

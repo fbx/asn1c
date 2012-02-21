@@ -61,7 +61,7 @@ typedef enum specialRealValue {
 	SRV__PLUS_INFINITY
 } specialRealValue_e;
 static struct specialRealValue_s {
-	char *string;
+	const char *string;
 	size_t length;
 	long dv;
 } specialRealValue[] = {

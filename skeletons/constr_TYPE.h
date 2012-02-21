@@ -83,8 +83,8 @@ asn_outmost_tag_f asn_TYPE_outmost_tag;
  * The definitive description of the destination language's structure.
  */
 typedef struct asn_TYPE_descriptor_s {
-	char *name;	/* A name of the ASN.1 type. "" in some cases. */
-	char *xml_tag;	/* Name used in XML tag */
+	const char *name;	/* A name of the ASN.1 type. "" in some cases. */
+	const char *xml_tag;	/* Name used in XML tag */
 
 	/*
 	 * Generalized functions for dealing with the specific type.
@@ -147,7 +147,7 @@ typedef struct asn_TYPE_member_s {
 	asn_constr_check_f *memb_constraints;	/* Constraints validator */
 	asn_per_constraints_t *per_constraints;	/* PER compiled constraints */
 	int (*default_value)(int setval, void **sptr);	/* DEFAULT <value> */
-	char *name;			/* ASN.1 identifier of the element */
+	const char *name;			/* ASN.1 identifier of the element */
 } asn_TYPE_member_t;
 
 /*
